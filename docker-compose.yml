@@ -1,9 +1,19 @@
 services:
-  tekkit-server:
+  tekkit-2-server-normal:
     build: .
     ports:
       - "25565:25565/udp"
       - "25565:25565/tcp"
     volumes:
-      - ./world:/minecraft/world
-      - ./server.properties:/minecraft/server.properties
+      - ./servers/normal/world:/minecraft/world
+      - ./servers/normal/server.properties:/minecraft/server.properties
+      - ./servers/normal/config/computercraft.cfg:/minecraft/config/computercraft.cfg
+  # tekkit-2-server-creative:
+  #   build: .
+  #   ports:
+  #     - "25665:25565/udp"
+  #     - "25665:25565/tcp"
+  #   volumes:
+  #     - ./servers/creative/world:/minecraft/world
+  #     - ./servers/creative/server.properties:/minecraft/server.properties
+  #     - ./servers/creative/config:/minecraft/config
